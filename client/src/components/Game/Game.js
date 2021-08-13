@@ -133,7 +133,7 @@ export default class Game extends Component {
     //handles user turn
     userTurn = (data) => {
         if (data == undefined) data = 0;
-
+        console.log(this.state.syllable);
         setTimeout(function () {
             // shows input elemn
             input_elm.hidden = false; 
