@@ -5,6 +5,9 @@ import Lobby from './components/pages/Lobby';
 import Room from './components/pages/Room';
 function App() {
   const history = createBrowserHistory({forceRefresh:true});
+  App.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build/index.html'));
+  });
   return (
     <div>
         <Router history={history}>
