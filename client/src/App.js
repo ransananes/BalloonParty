@@ -10,7 +10,7 @@ function App() {
         <Router history={history}>
         <Switch>
         <Route exact path='/' component={Lobby}/>
-        <Route exact path='/Room' component={Room} />
+        <Route component={Room} />
       </Switch>
       </Router>
     </div>
