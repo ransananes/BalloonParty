@@ -6,7 +6,7 @@ const LobbyMenu = ({history}) => {
         if(e.keyCode === 13 && e.shiftKey === false && (/\S/.test(e.target.value))) {
             e.preventDefault();
             localStorage.setItem('settings',JSON.stringify({nickname:e.target.value}))
-            history.push("/Room");
+            history.push("/room");
         }
 
     }
