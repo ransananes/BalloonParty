@@ -5,7 +5,7 @@ import './Chat.css'
 
 class Chat extends React.Component {
     static contextType = SocketContext;
-    nickname = JSON.parse(localStorage.getItem('settings')).nickname;
+    nickname = "רן המלך";
     currentDate = new Date();
     constructor() {
       super();
@@ -22,6 +22,9 @@ class Chat extends React.Component {
 
 
     componentDidMount() {
+        if(localStorage.getItem('settings')) {
+            this.nickname = JSON.parse(localStorage.getItem('settings')).nickname;
+        }
         const message = {
             name : this.nickname,
             time : this.currentDate.timeNow(),
