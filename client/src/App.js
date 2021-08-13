@@ -1,7 +1,6 @@
 import React from 'react';
 import {Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from "history";
-import Lobby from './components/pages/Lobby';
 import Room from './components/pages/Room';
 function App() {
   const history = createBrowserHistory({forceRefresh:true});
@@ -9,8 +8,7 @@ function App() {
     <div>
         <Router history={history}>
         <Switch>
-        <Route exact path='/' component={Lobby}/>
-        <Route exact path='/Room' component={Room} />
+        <Route exact path='/' component={Room} />
       </Switch>
       </Router>
     </div>

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.ea593e73.chunk.css",
-    "main.js": "/static/js/main.30540633.chunk.js",
-    "main.js.map": "/static/js/main.30540633.chunk.js.map",
+    "main.js": "/static/js/main.c8f06ffe.chunk.js",
+    "main.js.map": "/static/js/main.c8f06ffe.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7545a8a1.js",
     "runtime-main.js.map": "/static/js/runtime-main.7545a8a1.js.map",
-    "static/js/2.01d51f4f.chunk.js": "/static/js/2.01d51f4f.chunk.js",
-    "static/js/2.01d51f4f.chunk.js.map": "/static/js/2.01d51f4f.chunk.js.map",
+    "static/js/2.c0a41dcb.chunk.js": "/static/js/2.c0a41dcb.chunk.js",
+    "static/js/2.c0a41dcb.chunk.js.map": "/static/js/2.c0a41dcb.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.ea593e73.chunk.css.map": "/static/css/main.ea593e73.chunk.css.map",
-    "static/js/2.01d51f4f.chunk.js.LICENSE.txt": "/static/js/2.01d51f4f.chunk.js.LICENSE.txt",
+    "static/js/2.c0a41dcb.chunk.js.LICENSE.txt": "/static/js/2.c0a41dcb.chunk.js.LICENSE.txt",
     "static/media/User.css": "/static/media/cartoon-shelf.4281de28.png",
     "static/media/duck-user.41cabf10.png": "/static/media/duck-user.41cabf10.png",
     "static/media/Game.css": "/static/media/shower-room-2.89a961d3.jpg",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7545a8a1.js",
-    "static/js/2.01d51f4f.chunk.js",
+    "static/js/2.c0a41dcb.chunk.js",
     "static/css/main.ea593e73.chunk.css",
-    "static/js/main.30540633.chunk.js"
+    "static/js/main.c8f06ffe.chunk.js"
   ]
 }
