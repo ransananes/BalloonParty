@@ -12,7 +12,7 @@ const io = socket(server, {cors: true});
 app.use(cors());
 
   // Exprees will serve up production assets
-  //app.use(express.static('client/build'));
+  app.use(express.static('client/build'));
 
   app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname + '/client/build/index.html'))
@@ -47,6 +47,7 @@ function onConnection(socket){
       room.syllable = syllables[generateRandomSyllable(59)];
       restartMatch();
       io.emit('Starting Game',{syllable: room.syllable, users: room.users});
+      console.log(room.syllable);
       io.to(room.users[room.currentUser].socket_id).emit('Turn')
     }
     else if (data.text.split(" ")[0] == "/name")
