@@ -1,0 +1,32 @@
+.message {
+    margin: auto;
+    width: 50%;
+    direction: rtl;
+}
+.message .name {
+    display:inline-block;
+    color:coral;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 60%;
+    padding: 2px;
+}
+.message .name:hover {
+    overflow: visible;
+}
+.message .time {
+    font-size: xx-small;
+    color: #c0b8b28f;
+    display:block;
+}   
+.message .message-text {
+    direction: ltr;
+    display:inline-block;
+    overflow-wrap: break-word;
+}
+.message-connection {
+    display:inline;
+}
+.message-disconnect {
+    display:inline;
+}

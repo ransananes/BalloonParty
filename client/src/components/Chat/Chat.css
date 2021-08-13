@@ -1,0 +1,60 @@
+* {
+    font-family: 'Arimo', sans-serif;
+}
+.Chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 240px;
+    background: #202020;
+    box-shadow: 0 0 1em rgb(0 0 0 / 30%);
+    display: flex;
+    flex-flow: column;
+    z-index: 0;
+
+}
+.Chat .messages {
+    flex: 1;
+    color: #ccc;
+    padding: 0.5em;
+    font-size: 0.8em;
+    overflow-y: auto;
+    z-index: 0;
+}
+.Chat .input {
+    display: flex;
+    height: 3em;
+    z-index: 1;
+}
+textarea {
+        direction: rtl;
+        text-align: right;
+        flex: 1;
+        border: none;
+        resize: none;
+        background: rgba(0,0,0,0.4);
+        outline: none;
+        width:fit-content;
+        color: #aaa;
+        padding: 0.5em;
+        line-height: 1.25;
+        font-size: smaller;
+        width: 100%;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width:10px;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
