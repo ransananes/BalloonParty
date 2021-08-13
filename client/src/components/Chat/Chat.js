@@ -50,6 +50,10 @@ class Chat extends React.Component {
     })
     // starts game 
     this.context.on('Starting Game', () => this.gameStartMessage(3));
+    // changes chat name
+    this.context.on('updatechatnick', (data) => {
+        this.nickname = data; localStorage.setItem('settings',JSON.stringify({nickname:data}))
+    })
 }
         // handle game Start message
     gameStartMessage = (seconds) => {

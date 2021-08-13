@@ -33,7 +33,9 @@ function onConnection(socket){
   //room.users.push(socket.id);
   socket.emit('user_connected')
   socket.on('user_joined_sent', (data) => {room.users.push({name: data.name, socket_id: socket.id, health: 3}); const all_data = {data_msg : data, users: room.users, syllable: room.syllable}; io.emit('user_joined_received', all_data); })
-  socket.on('message', (data) => {if(data.text == "/start" && !room.gameStarted) {
+  socket.on('message', (data) => 
+  {
+    if(data.text == "/start" && !room.gameStarted) {
      room.gameStarted = true;  
      room.syllable = syllables[generateRandomSyllable(59)];
      // emits to the first user in the userlist
@@ -46,6 +48,17 @@ function onConnection(socket){
       restartMatch();
       io.emit('Starting Game',{syllable: room.syllable, users: room.users});
       io.to(room.users[room.currentUser].socket_id).emit('Turn')
+    }
+    else if (data.text.split(" ")[0] == "/name")
+    {
+      for (let index = 0; index < room.users.length; index++) {
+        // new name
+        if (room.users[index].socket_id === socket.id) {
+          room.users[index].name = data.text.split(" ")[1]
+          }
+      }
+      socket.emit('updatechatnick',(data.text.split(" ")[1]));
+      io.emit('updateNickNames', {id: socket.id, nickname: data.text.split(" ")[1]})
     }
     else socket.broadcast.emit('message_received', data)
   });

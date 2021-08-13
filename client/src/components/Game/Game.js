@@ -78,6 +78,8 @@ export default class Game extends Component {
         this.context.on('setWaterBalloonExplosion', () => this.timesUp(false));
         this.context.on('lostHP', (data) => this.reduceHealth(data))
         this.context.on('Winner', (data) => this.Winner(data))
+
+        this.context.on('updateNickNames', (data) => this.updateUserNicknames(data))
     }   
     getUserNames(data) {
         let user_names = [];
@@ -245,7 +247,16 @@ export default class Game extends Component {
             water_drip_sound.pause();
             water_winner_sound.play();
         }
-        
+        updateUserNicknames (data) { 
+            for (var i = 0; i < this.state.user_names.length; i++) {
+                if(data.id == this.state.user_names[i].id)
+                {
+                var duplicate = this.state.user_names;
+                duplicate[i].name = data.nickname;
+                this.setState({user_names : duplicate})
+                }
+            }
+        }
     render() {
         return (
             <div className="Balloon-Party">
