@@ -11,12 +11,12 @@ const path = require('path');
 const io = socket(server, {cors: true});
 app.use(cors());
 
-  // Exprees will serve up production assets
-  app.use(express.static('client/build'));
+  // // Exprees will serve up production assets
+  // app.use(express.static('client/build'));
 
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname + '/client/build/index.html'))
-  })
+  // app.get('/*', (req, res) => {
+  //   res.sendFile(path.resolve(__dirname + '/client/build/index.html'))
+  // })
 
 
 
