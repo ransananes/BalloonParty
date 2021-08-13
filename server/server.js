@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
+const path = require('path');
 
 // Enables CORS (prevent xml injection)
 const io = socket(server, {cors: true});
@@ -13,11 +14,10 @@ app.use(cors());
   // Exprees will serve up production assets
   app.use(express.static('client/build'));
 
-  // Express serve up index.html file if it doesn't recognize route
-  const path = require('path');
-  app.get('*', (req, res) => {
+  app.get('/*', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+})
+
 
 // currenty global room
 const room = {users:[],gameStarted: false,words_used: [],syllable: "",roundTime: 0,currentUser: 0,messages: [],}
