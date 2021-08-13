@@ -10,7 +10,6 @@ const socket = require("socket.io");
 const io = socket(server, {cors: true});
 app.use(cors());
 
-if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
   app.use(express.static('client/build'));
 
@@ -19,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
-}
+
 // currenty global room
 const room = {users:[],gameStarted: false,words_used: [],syllable: "",roundTime: 0,currentUser: 0,messages: [],}
 var fs = require('fs')
