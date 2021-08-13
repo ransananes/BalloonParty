@@ -126,10 +126,11 @@ function onConnection(socket){
   })
 }
 
+// generates new syllable
 function generateRandomSyllable(max) {
   return Math.floor(Math.random() * max) + 1;
 }
-
+// check if contains word
 function ContainsExactWord(words, compare) {
   if (words.length-1 == compare.length)
   {
