@@ -73,7 +73,7 @@ export default class Game extends Component {
         this.context.on('user_animated', (data) => {this.userAnimation(data)})
         // update users input 
         this.context.on('updateTextInputs', (data) => {this.changeTextValueByID(data.id,data.value)})
-        this.context.on('correctAnswer', (data) => {data = data.substring(0, data.length - 1); this.correctAnswer(data)})
+        this.context.on('correctAnswer', (data) => {this.correctAnswer(data)})
         this.context.on('incorrectAnswer', () => this.incorrectAnswer())
         this.context.on('setWaterBalloonExplosion', () => this.timesUp(false));
         this.context.on('lostHP', (data) => this.reduceHealth(data))
